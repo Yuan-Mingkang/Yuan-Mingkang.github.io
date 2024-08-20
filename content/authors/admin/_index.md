@@ -53,49 +53,38 @@ interests:
   - Reinforcement Learning
 
 education:
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+  - area: M.SE Signal and Information Processing
+    institution: University of Chinese Academy of Sciences
+    date_start: 2020-09-01
+    date_end: 2023-07-31
     summary: |
-      GPA: 3.8/4.0
+      GPA: 3.58/4.0
 
       Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+      - Methods of Optimization, Matrix Analysis and Application
+      - Pattern Recognition and Machine Learning, The Design and Analysis of Computer Algorithm
+      - Multi-Agent Systems, Robot Visual Localization and Navigation
+  - area: B.E Flight Vehicle Propulsion Engineering
+    institution: Northwestern Polytechnical University
+    date_start: 2016-08-11
+    date_end: 2020-07-10
     summary: |
-      GPA: 3.4/4.0
+      GPA: 3.23/4.0
       
       Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      - Advanced Mathematics, Linear Algebra
+      - Fundamentals of Digital/Analog Electronic Technique
+      - Automatic Control Theory, Distributed Control System
 work:
   - position: Director of Cloud Infrastructure
     company_name: GenCoin
     company_url: ''
     company_logo: ''
-    date_start: 2021-01-01
+    date_start: 2023-08-01
     date_end: ''
     summary: |2-
       Responsibilities include:
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - position: Backend Software Engineer
-    company_name: X
-    company_url: ''
-    company_logo: ''
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      Responsibilities include:
-      - Migrated infrastructure to a new data center
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
 
