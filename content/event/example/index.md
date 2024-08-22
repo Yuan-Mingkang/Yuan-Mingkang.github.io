@@ -32,28 +32,25 @@ tags: []
 # Is this a featured talk? (true/false)
 featured: false
 
-sections:
-  # A section to display blog posts
-  - block: collection
-    id: section-1
-    image:
-      placement: 1
-      caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
-      focal_point: 'Center'
-      size: cover
-      preview_only: false
-      alt_text: An optional description of the image for screen readers.
-      filename: 111.png  # Uncomment to load an image from `assets/media/` instead.
-  - block: collection
-    id: section-2
-    image:
-      placement: 1
-      caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
-      focal_point: 'Center'
-      size: cover
-      preview_only: false
-      alt_text: An optional description of the image for screen readers.
-      filename: gan.png  # Uncomment to load an image from `assets/media/` instead.
+
+image:
+  placement: 1
+  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
+  focal_point: 'Center'
+  size: cover
+  preview_only: false
+  alt_text: An optional description of the image for screen readers.
+  filename: 111.png  # Uncomment to load an image from `assets/media/` instead.
+- block: collection
+id: section-2
+image:
+  placement: 1
+  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
+  focal_point: 'Center'
+  size: cover
+  preview_only: false
+  alt_text: An optional description of the image for screen readers.
+  filename: gan.png  # Uncomment to load an image from `assets/media/` instead.
 # image1:
 #   placement: 1
 #   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
