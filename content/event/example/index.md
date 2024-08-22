@@ -31,13 +31,17 @@ tags: []
 
 # Is this a featured talk? (true/false)
 featured: false
+image:
+  placement: 1
+  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
+  focal_point: 'Center'
+  preview_only: false
+  alt_text: An optional description of the image for screen readers.
+  filename: 111.png  # Uncomment to load an image from `assets/media/` instead.
 
-image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
-  focal_point: Center
-image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
-  focal_point: Center
+# image:
+#   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
+#   focal_point: Center
 
 #links:
 #  - icon: twitter
