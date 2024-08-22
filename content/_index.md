@@ -7,7 +7,7 @@ type: landing
 design:
   # Default section spacing
   spacing: "6rem"
-  
+
 sections:
   - block: resume-biography-3
     content:
@@ -42,6 +42,12 @@ sections:
         Please reach out to collaborate 😃
     design:
       columns: '1'
+  - block: resume-skills
+    content:
+      title: Skills & Hobbies
+      username: admin
+    design:
+      show_skill_percentage: false
   - block: collection
     id: papers
     content:
