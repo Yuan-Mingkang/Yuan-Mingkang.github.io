@@ -77,12 +77,6 @@ sections:
         description: ''
         percent: 80
         icon: camera
-
-languages:
-  - name: Chinese
-    percent: 100
-  - name: English
-    percent: 75
   - block: collection
     id: papers
     content:
