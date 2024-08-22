@@ -103,11 +103,13 @@ sections:
       # Page order: descending (desc) or ascending (asc) date.
       order: desc
     design:
+      view: article-grid
+      columns: 2
       # Choose a layout view
-      view: date-title-summary
-      # Reduce spacing
-      spacing:
-        padding: [0, 0, 0, 0]
+      # view: date-title-summary
+      # # Reduce spacing
+      # spacing:
+      #   padding: [0, 0, 0, 0]
   - block: cta-card
     demo: true # Only display this section in the Hugo Blox Builder demo site
     content:
