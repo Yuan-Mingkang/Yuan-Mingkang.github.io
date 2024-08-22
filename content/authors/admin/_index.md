@@ -125,7 +125,7 @@ languages:
 #   Add/remove as many awards below as you like.
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
-sections:
+picture:
   - block: markdown
     image:
         caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)'
@@ -138,11 +138,6 @@ sections:
       text: Add any **markdown** formatted content here - text, images, videos, galleries - and even HTML code!
 
 awards:
-  - title: Neural Networks and Deep Learning
-    image:
-      caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)'
-      focal_point: ''
-      preview_only: false
   - title: Blockchain Fundamentals
     url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
     date: '2023-07-01'
