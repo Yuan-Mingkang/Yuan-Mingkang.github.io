@@ -32,26 +32,21 @@ tags: []
 # Is this a featured talk? (true/false)
 featured: false
 
-![](/111.png)
+image:
+  placement: 1
+  focal_point: 'Center'
+  size: cover
+  preview_only: false
+  alt_text: An optional description of the image for screen readers.
+  filename: 111.png  # Uncomment to load an image from `assets/media/` instead.
 
-![](/222.png)
-# image:
-  # placement: 1
-  # caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
-  # focal_point: 'Center'
-  # size: cover
-  # preview_only: false
-  # alt_text: An optional description of the image for screen readers.
-  # filename: 111.png  # Uncomment to load an image from `assets/media/` instead.
-
-# image:
-#   placement: 1
-#   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
-#   focal_point: 'Center'
-#   size: cover
-#   preview_only: false
-#   alt_text: An optional description of the image for screen readers.
-#   filename: gan.png  # Uncomment to load an image from `assets/media/` instead.
+image:
+  placement: 1
+  focal_point: 'Center'
+  size: cover
+  preview_only: false
+  alt_text: An optional description of the image for screen readers.
+  filename: gan.png  # Uncomment to load an image from `assets/media/` instead.
 # image1:
 #   placement: 1
 #   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
