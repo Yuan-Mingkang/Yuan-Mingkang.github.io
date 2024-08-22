@@ -45,7 +45,10 @@ renders as
   - blox-plugins-reveal
 ```
 ### Images
-![](/assets/media/111.png)
+
+![](./111.png)
+
+
 ## Diagrams
 
 Hugo Blox supports the _Mermaid_ Markdown extension for diagrams.
