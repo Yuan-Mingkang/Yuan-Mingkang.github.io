@@ -7,43 +7,7 @@ type: landing
 design:
   # Default section spacing
   spacing: "6rem"
-
-skills:
-  - name: Technical Skills
-    items:
-      - name: Python
-        description: ''
-        percent: 80
-        icon: code-bracket
-      - name: C
-        description: ''
-        percent: 80
-        icon: chart-bar
-      - name: Pytorch
-        description: ''
-        percent: 80
-        icon: circle-stack
-      - name: ROS
-        description: ''
-        percent: 40
-        icon: circle-stack
-  - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
-      - name: Hiking
-        description: ''
-        percent: 60
-        icon: person-simple-walk
-      - name: Cats
-        description: ''
-        percent: 100
-        icon: cat
-      - name: Photography
-        description: ''
-        percent: 80
-        icon: camera
-        
+  
 sections:
   - block: resume-biography-3
     content:
