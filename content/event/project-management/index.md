@@ -8,7 +8,7 @@ tags:
   - Hugo Blox
   - Markdown
 image:
-  placement: 2
+  placement: 3
   focal_point: 'Center'
   preview_only: false
 ---
