@@ -42,6 +42,47 @@ sections:
         Please reach out to collaborate 😃
     design:
       columns: '1'
+  skills:
+  - name: Technical Skills
+    items:
+      - name: Python
+        description: ''
+        percent: 80
+        icon: code-bracket
+      - name: C
+        description: ''
+        percent: 80
+        icon: chart-bar
+      - name: Pytorch
+        description: ''
+        percent: 80
+        icon: circle-stack
+      - name: ROS
+        description: ''
+        percent: 40
+        icon: circle-stack
+  - name: Hobbies
+    color: '#eeac02'
+    color_border: '#f0bf23'
+    items:
+      - name: Hiking
+        description: ''
+        percent: 60
+        icon: person-simple-walk
+      - name: Cats
+        description: ''
+        percent: 100
+        icon: cat
+      - name: Photography
+        description: ''
+        percent: 80
+        icon: camera
+
+languages:
+  - name: Chinese
+    percent: 100
+  - name: English
+    percent: 75
   - block: collection
     id: papers
     content:
