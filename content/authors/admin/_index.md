@@ -91,7 +91,8 @@ work:
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
-  - name: Technical Skills
+  # - name: Technical Skills
+  - name: ''
     items:
       - name: Python
         description: ''
@@ -105,11 +106,8 @@ skills:
         description: ''
         percent: 80
         icon: circle-stack
-      - name: ROS
-        description: ''
-        percent: 40
-        icon: circle-stack
-  - name: Hobbies
+  - name: ''
+  # - name: Hobbies
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
