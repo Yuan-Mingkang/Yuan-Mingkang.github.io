@@ -44,7 +44,7 @@ sections:
       columns: '1'
   - block: resume-skills
     content:
-      title: Skills
+      title: Skills & Hobbies
       username: admin
     design:
       show_skill_percentage: false
