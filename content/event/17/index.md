@@ -1,21 +1,18 @@
 ---
-title: ✅ Award
-summary: Easily manage your projects - create ideation mind maps, Gantt charts, todo lists, and more!
-date: 2023-10-23
+title: Outstanding Student of the School 2016-2017
+summary: Northwestern Polytechnical University
+date: 2017-12
 authors:
   - admin
 tags:
-  - Hugo Blox
-  - Markdown
+  - Outstanding Student
+  - The First Prize Scholarship
 image:
-  filename: 17.png
-  placement: 3
+  placement: 1
   focal_point: 'Center'
   preview_only: false
   
 ---
-
-Easily manage your projects - create ideation mind maps, Gantt charts, todo lists, and more!
 
 ### Translation
 

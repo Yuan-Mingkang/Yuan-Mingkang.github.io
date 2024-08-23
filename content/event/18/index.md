@@ -1,20 +1,18 @@
 ---
-title: ✅ Award
-summary: Easily manage your projects - create ideation mind maps, Gantt charts, todo lists, and more!
-date: 2023-10-23
+title: Outstanding Student of the College 2017-2018
+summary: Northwestern Polytechnical University
+date: 2018-12
 authors:
   - admin
 tags:
-  - Hugo Blox
-  - Markdown
+  - Outstanding Student
+  - The Second Prize Scholarship
 image:
-  placement: 3
+  placement: 1
   focal_point: 'Center'
   preview_only: false
   
 ---
-
-Easily manage your projects - create ideation mind maps, Gantt charts, todo lists, and more!
 
 ### Translation
 
