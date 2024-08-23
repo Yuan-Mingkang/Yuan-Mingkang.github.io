@@ -12,10 +12,10 @@ main:
     weight: 11
   - name: Projects
     url: /#news
-    weight: 20
+    weight: 15
   - name: Awards
     url: /#talks
-    weight: 20
+    weight: 18
   - name: Experience
     url: experience/
     weight: 20
