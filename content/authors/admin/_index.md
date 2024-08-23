@@ -75,6 +75,18 @@ education:
       - Advanced Mathematics, Linear Algebra
       - Fundamentals of Digital/Analog Electronic Technique
       - Automatic Control Theory, Distributed Control System
+work:
+  - position: Flight Control Engineer
+    company_name: Zhejiang jiachuang Air Power Technology Co.
+    company_url: ''
+    company_logo: ''
+    date_start: 2023-07-31
+    date_end: ''
+    summary: |
+      Responsibilities include:
+      - develop and tune the control algorithms and model-based software
+      - Experience in system modelling and control, analysis, and simulation in aircraft applications.
+      - Develope drone clustering algorithms
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
@@ -119,43 +131,6 @@ languages:
     percent: 100
   - name: English
     percent: 75
-
-
-# Awards.
-#   Add/remove as many awards below as you like.
-#   Only `title`, `awarder`, and `date` are required.
-#   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
-picture:
-  - block: markdown
-    image:
-        caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)'
-        focal_point: ''
-        preview_only: false
-    id: section-1
-    content:
-      title: Section 1
-      subtitle: A subtitle
-      text: Add any **markdown** formatted content here - text, images, videos, galleries - and even HTML code!
-
-awards:
-  - title: Blockchain Fundamentals
-    url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-    date: '2023-07-01'
-    awarder: edX
-    icon: edx
-    summary: |
-      Learned:
-      - Synthesize your own blockchain solutions
-      - Gain an in-depth understanding of the specific mechanics of Bitcoin
-      - Understand Bitcoin’s real-life applications and learn how to attack and destroy Bitcoin, Ethereum, smart contracts and Dapps, and alternatives to Bitcoin’s Proof-of-Work consensus algorithm
-  - title: 'Object-Oriented Programming in R'
-    url: https://www.datacamp.com/courses/object-oriented-programming-with-s3-and-r6-in-r
-    certificate_url: https://www.datacamp.com
-    date: '2023-01-21'
-    awarder: datacamp
-    icon: datacamp
-    summary: |
-      Object-oriented programming (OOP) lets you specify relationships between functions and the objects that they can act on, helping you manage complexity in your code. This is an intermediate level course, providing an introduction to OOP, using the S3 and R6 systems. S3 is a great day-to-day R programming tool that simplifies some of the functions that you write. R6 is especially useful for industry-specific analyses, working with web APIs, and building GUIs.
 ---
 
 ## About Me
