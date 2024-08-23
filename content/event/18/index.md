@@ -1,7 +1,7 @@
 ---
 title: Outstanding Student of the College 2017-2018
 summary: Northwestern Polytechnical University
-date: 2018-12
+date: 2018-12-01
 authors:
   - admin
 tags:
@@ -15,7 +15,6 @@ image:
 ---
 
 ### Translation
-
 ![](./18en.png)
 
 

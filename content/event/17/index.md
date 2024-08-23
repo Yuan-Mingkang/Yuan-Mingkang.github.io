@@ -1,7 +1,7 @@
 ---
 title: Outstanding Student of the School 2016-2017
 summary: Northwestern Polytechnical University
-date: 2017-12
+date: 2017-12-01
 authors:
   - admin
 tags:
@@ -15,7 +15,6 @@ image:
 ---
 
 ### Translation
-
 ![](./17en.png)
 
 

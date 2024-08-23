@@ -1,7 +1,7 @@
 ---
 title: Outstanding Student of the School 2018-2019
 summary: Northwestern Polytechnical University
-date: 2019-12
+date: 2019-12-01
 authors:
   - admin
 tags:
@@ -15,7 +15,6 @@ image:
 ---
 
 ### Translation
-
 ![](./19en.png)
 
 
