@@ -9,7 +9,7 @@ tags:
   - Markdown
 image:
   filename: 17.png
-  placement: 2
+  placement: 3
   focal_point: 'Center'
   preview_only: false
   
