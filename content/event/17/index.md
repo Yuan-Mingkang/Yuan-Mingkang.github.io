@@ -8,16 +8,18 @@ tags:
   - Hugo Blox
   - Markdown
 image:
-  placement: 3
+  filename: 17.png
+  placement: 1
   focal_point: 'Center'
   preview_only: false
+  
 ---
 
 Easily manage your projects - create ideation mind maps, Gantt charts, todo lists, and more!
 
 ### Translation
 
-![](./111.jpg)
+![](./17en.png)
 
 
 
