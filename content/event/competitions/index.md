@@ -1,7 +1,7 @@
 ---
 title: Competitions
 summary: Here is a display of my various competition awards, if you are interested you can click to see them！
-date: ''
+date: '2023-07-31'
 authors:
   - admin
 tags:
@@ -11,10 +11,7 @@ image:
   focal_point: 'Center'
   preview_only: false
 ---
-
-## Patent
 This is the utility model patent I applied for my wall-climbing cleaning robot, with my instructor as the first inventor and me as the second inventor!
-![](./featured.jpg)
 
 ## Awards
 Third Prize in the 12th iCAN International Innovation and Entrepreneurship Competition China 2018
