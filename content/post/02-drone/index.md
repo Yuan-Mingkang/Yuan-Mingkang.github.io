@@ -1,7 +1,7 @@
 ---
 title: Quadcopter Drone
 summary: I designed and assembled my own drone for a competition!
-date: 2020-09-05
+date: 2021-04-05
 authors:
   - admin
 tags:
