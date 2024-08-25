@@ -33,7 +33,7 @@ sections:
       title: Languages
       username: admin
 ---
-##Hobbies
+## Hobbies
 
 Riding, Travelling, Badminton...
 
