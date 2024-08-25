@@ -33,3 +33,8 @@ sections:
       title: Languages
       username: admin
 ---
+##Hobbies
+
+Riding, Travelling, Badminton...
+
+![](/assets/media/hobbies.png)
