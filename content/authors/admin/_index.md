@@ -130,3 +130,9 @@ languages:
 ## About Me
 
 I am currently a flight control engineer in a Chinese company. My research interests include drones, robotics, and deep learning. So far, I have worked on several related projects, designed and developed several robots and drones, and have a strong passion for this industry.
+
+## Hobbies
+
+Riding, Travelling, Badminton...
+
+![](/assets/media/hobbies.png)
