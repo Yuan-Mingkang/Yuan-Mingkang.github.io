@@ -32,7 +32,8 @@ sections:
     content:
       title: Languages
       username: admin
-
+image:
+  filename: hobbies.png
 ---
 ## Hobbies
 
