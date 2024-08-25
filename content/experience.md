@@ -32,9 +32,9 @@ sections:
     content:
       title: Languages
       username: admin
+
+image:
+  filename: hobbies.png
+  alt_text: Riding, Travelling, Badminton...
+  focal_point: 'Center'
 ---
-## Hobbies
-
-Riding, Travelling, Badminton...
-
-![](/assets/media/hobbies.png)
