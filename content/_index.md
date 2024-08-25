@@ -54,17 +54,14 @@ sections:
       subtitle: ''
       text: Riding， Travelling， Badminton...
     design:
-      css_class: dark
-      background:
-        color: black
-        image:
-          # Add your image background to `assets/media/`.
-          filename: hobbies.png
-          filters:
-            brightness: 1.0
-          size: cover
-          position: center
-          parallax: false
+      image:
+        # Add your image background to `assets/media/`.
+        filename: hobbies.png
+        filters:
+          brightness: 1.0
+        size: cover
+        position: center
+        parallax: false
     design:
       columns: '1'
   - block: collection
