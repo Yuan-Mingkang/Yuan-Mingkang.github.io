@@ -32,4 +32,13 @@ sections:
     content:
       title: Languages
       username: admin
+    design:
+      image:
+        # Add your image background to `assets/media/`.
+        filename: hobbies.png
+        filters:
+          brightness: 1.0
+        size: cover
+        position: center
+        parallax: false
 ---
