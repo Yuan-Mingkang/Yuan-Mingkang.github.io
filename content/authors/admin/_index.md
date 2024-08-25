@@ -125,15 +125,14 @@ languages:
     percent: 100
   - name: English
     percent: 75
-
-hobbies:
-  - title: Hobbies
-    image:
-      # Add your image background to `assets/media/`.
-      filename: hobbies.png
-      size: cover
-      position: center
-      parallax: false
+  image:
+    # Add your image background to `assets/media/`.
+    filename: hobbies.png
+    filters:
+      brightness: 1.0
+    size: cover
+    position: center
+    parallax: false
 ---
 
 ## About Me

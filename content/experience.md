@@ -32,32 +32,4 @@ sections:
     content:
       title: Languages
       username: admin
-  - block: resume-hobbies
-    content:
-      title: hobbies
-      username: admin
-
-  # - block: resume-biography-3
-  #   content:
-  #     # Choose a user profile to display (a folder name within `content/authors/`)
-  #     username: admin
-  #     text: ""
-  #     # Show a call-to-action button under your biography? (optional)
-  #   design:
-  #     css_class: dark
-  #     background:
-  #       color: black
-  #       image:
-  #         # Add your image background to `assets/media/`.
-  #         filename: hobbies.png
-  #         filters:
-  #           brightness: 1.0
-  #         size: cover
-  #         position: center
-  #         parallax: false
 ---
-## Hobbies
-
-Riding, Travelling, Badminton...
-
-![](/assets/media/hobbies.png)
