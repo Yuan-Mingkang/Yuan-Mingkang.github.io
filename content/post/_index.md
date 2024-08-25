@@ -1,4 +1,4 @@
 ---
-title: Blog
+title: Projects
 view: article-grid
 ---
