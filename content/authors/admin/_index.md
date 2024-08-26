@@ -115,7 +115,7 @@ skills:
         description: ''
         percent: 60
         icon: person-simple-walk
-      - name: git
+      - name: 3D modeling
         description: ''
         percent: 100
         icon: cat
