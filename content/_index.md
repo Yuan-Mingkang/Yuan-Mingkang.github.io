@@ -48,17 +48,21 @@ sections:
       username: admin
     design:
       show_skill_percentage: false
-  - block: markdown
-    content:
-      title: 'Hobbies'
-      subtitle: ''
-      text: Riding， Travelling， Badminton...
-    design:
-      background:
-        image:
+      image:
           # Add your image background to `assets/media/`.
           filename: hobbies.png
           position: center
+  # - block: markdown
+  #   content:
+  #     title: 'Hobbies'
+  #     subtitle: ''
+  #     text: Riding， Travelling， Badminton...
+  #   design:
+  #     background:
+  #       image:
+  #         # Add your image background to `assets/media/`.
+  #         filename: hobbies.png
+  #         position: center
   - block: collection
     id: papers
     content:
