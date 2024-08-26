@@ -97,15 +97,15 @@ skills:
       - name: Python
         description: ''
         percent: 80
-        icon: code-bracket
+        # icon: fa-python/
       - name: C
         description: ''
         percent: 80
-        icon: chart-bar
+        # icon: chart-bar
       - name: Pytorch
         description: ''
         percent: 80
-        icon: circle-stack
+        # icon: circle-stack
   - name: ''
   # - name: Hobbies
     color: '#eeac02'
@@ -114,11 +114,11 @@ skills:
       - name: ROS
         description: ''
         percent: 60
-        icon: person-simple-walk
+        # icon: person-simple-walk
       - name: 3D modeling
         description: ''
         percent: 100
-        icon: cat
+        # icon: cat
 
 languages:
   - name: Chinese
