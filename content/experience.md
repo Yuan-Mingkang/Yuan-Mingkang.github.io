@@ -32,4 +32,14 @@ sections:
     content:
       title: Languages
       username: admin
+  - block: collection
+    id: hobbies
+    content:
+      title: Hobbies
+      filters:
+        folders:
+          - project
+    design:
+      view: card
+      columns: 1
 ---

@@ -1,0 +1,4 @@
+---
+title: Hobbies
+view: card
+---
