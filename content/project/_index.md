@@ -1,4 +1,4 @@
 ---
 title: Hobbies
-view: article-grid
+view: card
 ---

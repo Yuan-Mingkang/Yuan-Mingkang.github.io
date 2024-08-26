@@ -40,6 +40,6 @@ sections:
         folders:
           - project
     design:
-      view: article-grid
+      view: card
       columns: 1
 ---
