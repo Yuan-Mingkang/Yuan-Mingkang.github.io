@@ -127,8 +127,10 @@ sections:
     content:
       title: ''
       filters:
-        folders:
-          - experience
+        # folders:
+        #   - experience
+        image:
+          filename: hobbies.png
     # design:
     #   view: citation
   # - block: collection
