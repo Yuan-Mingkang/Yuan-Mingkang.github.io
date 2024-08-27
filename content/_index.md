@@ -125,12 +125,12 @@ sections:
       date_format: 'January 2006'
       # Education or Experience section first?
       is_education_first: false
-  # - block: collection
-  #   content:
-  #     title: ''
-  #     filters:
-        # folders:
-        #   - experience
+  - block: collection
+    content:
+      filters:
+        folders:
+          - hobbies
+
         
     # design:
     #   view: citation
