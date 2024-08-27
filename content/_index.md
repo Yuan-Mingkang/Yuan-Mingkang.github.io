@@ -6,7 +6,7 @@ type: landing
 
 design:
   # Default section spacing
-  spacing: "6rem"
+  spacing: "4rem"
 
 sections:
   - block: resume-biography-3
@@ -118,19 +118,20 @@ sections:
     content:
       title: Experience
       username: admin
+      image:
+          filename: hobbies.png
     design:
       # Hugo date format
       date_format: 'January 2006'
       # Education or Experience section first?
       is_education_first: false
-  - block: collection
-    content:
-      title: ''
-      filters:
+  # - block: collection
+  #   content:
+  #     title: ''
+  #     filters:
         # folders:
         #   - experience
-        image:
-          filename: hobbies.png
+        
     # design:
     #   view: citation
   # - block: collection
