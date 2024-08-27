@@ -42,14 +42,14 @@ sections:
   #       Please reach out to collaborate 😃
   #   design:
   #     columns: '1'
-  - block: resume-experience
-    content:
-      username: admin
-    design:
-      # Hugo date format
-      date_format: 'January 2006'
-      # Education or Experience section first?
-      is_education_first: false
+  # - block: resume-experience
+  #   content:
+  #     username: admin
+  #   design:
+  #     # Hugo date format
+  #     date_format: 'January 2006'
+  #     # Education or Experience section first?
+  #     is_education_first: false
   - block: resume-skills
     content:
       title: Skills
@@ -128,6 +128,17 @@ sections:
     design:
       view: article-grid
       columns: 2
+  - block: collection
+    id: experience
+    content:
+      title: experience
+      text: ""
+      filters:
+        folders:
+          - experience
+        exclude_featured: false
+    # design:
+    #   view: citation
   # - block: collection
   #   id: news
   #   content:
