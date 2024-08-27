@@ -20,12 +20,12 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-# role: Chief Scientist
-role: ymk201727@gmail.com
+#role: Chief Scientist
+# role: ymk201727@gmail.com
 
 # # Organizations/Affiliations to display in Biography blox
-# organizations:
-#   - name: 
+organizations:
+  - name: ymk201727@gmail.com
 #     url: ''
 
 # Social network links
