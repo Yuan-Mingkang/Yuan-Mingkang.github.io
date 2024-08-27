@@ -19,8 +19,9 @@ superuser: true
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 
-# # Role/position/tagline
+# Role/position/tagline
 # role: Chief Scientist
+role: ymk201727@gmail.com
 
 # # Organizations/Affiliations to display in Biography blox
 # organizations:
