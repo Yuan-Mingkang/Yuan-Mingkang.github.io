@@ -32,14 +32,14 @@ sections:
     content:
       title: Languages
       username: admin
-  - block: collection
-    id: hobbies
-    content:
-      title: Hobbies
-      filters:
-        folders:
-          - experience
-    design:
-      view: article-grid
-      columns: 1
+  # - block: collection
+  #   id: hobbies
+  #   content:
+  #     title: Hobbies
+  #     filters:
+  #       folders:
+  #         - experience
+  #   design:
+  #     view: article-grid
+  #     columns: 1
 ---

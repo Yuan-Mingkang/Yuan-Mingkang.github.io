@@ -56,21 +56,6 @@ sections:
       username: admin
     design:
       show_skill_percentage: false
-      image:
-          # Add your image background to `assets/media/`.
-          filename: hobbies.png
-          position: center
-  # - block: markdown
-  #   content:
-  #     title: 'Hobbies'
-  #     subtitle: ''
-  #     text: Riding， Travelling， Badminton...
-  #   design:
-  #     background:
-  #       image:
-  #         # Add your image background to `assets/media/`.
-  #         filename: hobbies.png
-  #         position: center
   - block: collection
     id: papers
     content:
@@ -131,12 +116,10 @@ sections:
   - block: collection
     id: experience
     content:
-      title: experience
-      text: ""
+      title: Experience
       filters:
         folders:
           - experience
-        exclude_featured: false
     # design:
     #   view: citation
   # - block: collection
