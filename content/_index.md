@@ -118,9 +118,9 @@ sections:
     content:
       title: Experience
       username: admin
-      image:
-          filename: hobbies.png
     design:
+      view: article-grid
+      columns: 2
       # Hugo date format
       date_format: 'January 2006'
       # Education or Experience section first?
