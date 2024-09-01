@@ -92,13 +92,13 @@ work:
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
-  - name: Technical Skills
+  - name: ''
     items:
-      - name: Python
+      - name: Python, C
         description: ''
         percent: 80
-        icon: devicon/python
-      - name: RStudio
+        icon: code-solid
+      - name: ROS
         description: ''
         percent: 100
         icon: devicon/rstudio
@@ -106,7 +106,7 @@ skills:
         description: ''
         percent: 40
         icon: devicon/pytorch
-  - name: Hobbies
+  - name: ''
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
