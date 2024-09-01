@@ -54,7 +54,7 @@ interests:
   - Reinforcement Learning
 
 education:
-  - area: M.SE Signal and Information Processing
+  - area: M.E Signal and Information Processing
     institution: University of Chinese Academy of Sciences
     date_start: 2020-09-01
     date_end: 2023-07-31
@@ -86,7 +86,7 @@ work:
     summary: |
       Responsibilities include:
       - develop and tune the control algorithms and model-based software
-      - Experience in system modelling and control, analysis, and simulation in aircraft applications.
+      - Experience in system modelling and control, analysis, and simulation in aircraft applications
       - Develope drone clustering algorithms
 
 # Skills
