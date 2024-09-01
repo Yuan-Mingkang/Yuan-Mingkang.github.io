@@ -97,11 +97,11 @@ skills:
       - name: Python, C
         description: ''
         percent: 80
-        icon: code-solid
+        icon: devicon/python
       - name: ROS
         description: ''
         percent: 100
-        icon: devicon/rstudio
+        icon: devicon/ros
       - name: PyTorch
         description: ''
         percent: 40
@@ -110,18 +110,14 @@ skills:
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: Hiking
+      - name: Git
         description: ''
         percent: 60
-        icon: person-simple-walk
-      - name: Cats
+        icon: devicon/git
+      - name: Opencv
         description: ''
         percent: 100
-        icon: cat
-      - name: Photography
-        description: ''
-        percent: 80
-        icon: camera
+        icon: devicon/opencv
 
 languages:
   - name: Chinese
