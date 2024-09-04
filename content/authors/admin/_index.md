@@ -118,7 +118,10 @@ skills:
         description: ''
         percent: 100
         icon: devicon/opencv
-
+      - name: SolidWorks
+        description: ''
+        percent: 100
+        icon: assets/media/icons/solidworks.svg
 languages:
   - name: Chinese
     percent: 100
