@@ -48,10 +48,10 @@ profiles:
   #   url: https://orcid.org/
 
 interests:
-  - Robotics
+  - Robotics, Drones
   - Automatic control system
   - Computer Vision
-  - Reinforcement Learning
+  - Machine Learning
 
 education:
   - area: M.E Signal and Information Processing
@@ -121,7 +121,7 @@ skills:
       - name: SolidWorks
         description: ''
         percent: 100
-        icon: assets/media/icons/solidworks.svg
+        icon: solidworks.svg
 languages:
   - name: Chinese
     percent: 100
@@ -131,5 +131,5 @@ languages:
 
 ## About Me
 
-I am currently a flight control engineer in a Chinese company. My research interests include drones, robotics, and deep learning. So far, I have worked on several related projects, designed and developed several robots and drones, and have a strong passion for this industry.
+I am currently a flight control engineer in a Chinese company. My research interests include Drones, Robotics, and Machine Learning. So far, I have worked on several related projects, designed and developed several robots and drones, and have a strong passion for this industry.
 
