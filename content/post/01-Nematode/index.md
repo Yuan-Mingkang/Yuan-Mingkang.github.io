@@ -34,7 +34,7 @@ Adding a centroskeletal head network to the example segmentation model to enhanc
 
 Incorporation of a central skeleton head network improves nematode image instance segmentation accuracy by about 1% and reduces overlapping nematode misdetection
 
-![](./result.png)
+![](./featured.png)
 
 ## Distributed Learning
 
