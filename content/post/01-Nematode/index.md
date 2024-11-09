@@ -16,7 +16,6 @@ In this project, I am mainly responsible for extracting the centroskeleton infor
 
 ## Problems
 
-![](./Problem.png)
 
 Using traditional deep learning networks, instance segmentation of nematodes, especially images with multiple nematodes overlapping, the segmentation accuracy of traditional instance segmentation networks works poorly and the target segmentation error rate is high!
 
@@ -34,7 +33,7 @@ Adding a centroskeletal head network to the example segmentation model to enhanc
 
 Incorporation of a central skeleton head network improves nematode image instance segmentation accuracy by about 1% and reduces overlapping nematode misdetection
 
-![](./featured.png)
+![](./result.png)
 
 ## Distributed Learning
 
