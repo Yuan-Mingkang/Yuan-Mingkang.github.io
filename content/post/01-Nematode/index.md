@@ -16,9 +16,10 @@ In this project, I am mainly responsible for extracting the centroskeleton infor
 
 ## Problems
 
+![](./Problem.png)
+
 Using traditional deep learning networks, instance segmentation of nematodes, especially images with multiple nematodes overlapping, the segmentation accuracy of traditional instance segmentation networks works poorly and the target segmentation error rate is high!
 
-![](./Problem.png)
 
 ## Solution
 
