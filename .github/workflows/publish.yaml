@@ -15,6 +15,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  deployments: write 
 
 concurrency:
   group: "pages"
@@ -32,7 +33,7 @@ jobs:
           # Fetch history for Hugo's .GitInfo and .Lastmod
         fetch-depth: 0
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v3
+      uses: peaceiris/actions-hugo@v2
       with:
         hugo-version: ${{ env.WC_HUGO_VERSION }}
         extended: true
