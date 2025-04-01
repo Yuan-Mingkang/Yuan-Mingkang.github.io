@@ -15,7 +15,7 @@ Based on the open-source gym-pybullet-drones simulation environment, I developed
 
 ## MPC
 
-\( L(x, u, X_r, U_r, Q, R) \)
+$$L(x, u, X_r, U_r, Q, R) \)$$
 
 ![](./step.png)
 
