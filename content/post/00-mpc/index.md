@@ -15,9 +15,7 @@ Based on the open-source gym-pybullet-drones simulation environment, I developed
 
 ## MPC
 
-{{< math.inline >}}
-$$ L(x, u, X_r, U_r, Q, R) = \sum_{k=0}^{N-1} \left( \|x_k - X_r\|_Q^2 + \|u_k - U_r\|_R^2 \right) $$
-{{< /math.inline >}}
+<!-- $$ L(x, u, X_r, U_r, Q, R) = \sum_{k=0}^{N-1} \left( \|x_k - X_r\|_Q^2 + \|u_k - U_r\|_R^2 \right) $$ -->
 
 ![](./step.png)
 
