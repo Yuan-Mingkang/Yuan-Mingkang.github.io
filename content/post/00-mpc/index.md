@@ -14,7 +14,7 @@ image:
 Based on the open-source gym-pybullet-drones simulation environment, I developed a UAV simulation scenario that utilizes an MPC controller for trajectory tracking, supporting constraint definition and disturbances. I used the cf2 UAV model provided by gym-pybullet-drones, and I created UAV formation trajectories in Blender using the Skybrush plugin to facilitate algorithm verification. Ultimately, this resulted in a simulation effect of multiple UAVs tracking trajectories. 
 
 ## MPC
-
+123123
 \( L(x, u, X_r, U_r, Q, R) \)
 
 ![](./step.png)
