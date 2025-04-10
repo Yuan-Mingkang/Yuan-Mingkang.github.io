@@ -82,6 +82,8 @@ This project demonstrates the design and implementation of a high-performance Mo
    - **Data Pipeline**:  
      - CSV trajectory parsing → State reference generation → MPC-compatible format.  
 
+**Visual Display**:  
+
 ## Drone Swarm Choreography with Blender Skybrush
 
 This project showcases professional drone light show creation using Blender Skybrush's specialized toolkit:  
@@ -106,3 +108,55 @@ This project showcases professional drone light show creation using Blender Skyb
 
 **Visual Display**:  
 
+## Enhanced Trajectory Preprocessing for MPC-Compatible Path Generation  
+*Cubic Spline Interpolation & Dynamic Curvature Constraints Implementation*
+
+This trajectory refinement system bridges Blender Skybrush's raw outputs with MPC requirements through advanced signal processing:
+
+**1. CSV Data Pipeline**  
+```python
+for i, file_name in enumerate(file_list):
+    # Data normalization with scale factor consistency
+    raw_waypoints = df[["x [m]", "y [m]", "z [m]"]].iloc[1:].values / 6.0  # Maintain scaling factor
+    time_raw = df["Time [msec]"].iloc[1:].values / 1000.0  # Convert to seconds
+```
+
+**2. Temporal Domain Processing**  
+- **Time Axis Reconstruction**:  
+  ```python
+  time_dense = np.linspace(start_time, end_time, 
+                         int(control_freq_hz * duration_sec))  # Match MPC control frequency
+  ```  
+- **Phase Alignment**: Ensures temporal consistency across swarm agents through shared `duration_sec`
+
+**3. Spatial Interpolation**  
+*Cubic Spline Implementation*:  
+```python
+cs_x = CubicSpline(time_raw, raw_waypoints[:, 0], bc_type='natural')  # Natural boundary conditions
+dense_waypoints = np.column_stack((cs_x(time_dense), cs_y(time_dense), cs_z(time_dense)))
+```  
+- **Continuity Enforcement**: \( C^2 \)-continuous trajectories prevent MPC discontinuity penalties  
+- **Derivative Matching**: Implicitly satisfies \( \dot{x}_{ref} \) continuity for smooth MPC tracking
+
+**4. Dynamic Feasibility Enforcement**  
+*Adaptive Curvature Constraints*:  
+```python
+velocity = np.gradient(dense_waypoints, axis=0) * control_freq_hz  # First derivative
+acceleration = np.gradient(velocity, axis=0) * control_freq_hz  # Second derivative
+acc_magnitude = np.linalg.norm(acceleration, axis=1)
+
+# Physically-aware smoothing
+max_acc = 2 * 9.81  # 2g threshold matching drone dynamics
+dense_waypoints[idx] = 0.5*(dense_waypoints[idx-1] + dense_waypoints[idx+1])  # Local averaging
+```  
+- **Kinematic Feasibility**: Maintains \( \|a\| \leq 2g \) for quadrotor dynamics compatibility  
+- **Stability Preservation**: Selective smoothing avoids over-damping critical waypoints
+
+**5. MPC Integration**  
+```python
+TARGET_POS.append(dense_waypoints)  # Feed to MPC reference generator
+```  
+- **State Vector Alignment**: Processed waypoints directly populate \( x_{ref} \in \mathbb{R}^{12} \)  
+- **Temporal Synchronization**: \( \Delta t = 1/\text{control\_freq\_hz} \) matches MPC discretization
+
+**Visual Display**:  
