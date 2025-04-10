@@ -20,13 +20,30 @@ Based on the open-source gym-pybullet-drones simulation environment, I developed
 
 After finishing the training of the Distributed GAN, we collected the synthetic images from the Distributed GAN as the training set for different tasks. we use the trained Generator as a data provider to train DeepLab v3+ model for a semantic segmentation task on remote sensing images.
 
-## Blender Skybrush
+## Drone Swarm Choreography with Blender Skybrush
 
-![](./plat.png)
+This project showcases professional drone light show creation using Blender Skybrush's specialized toolkit:  
 
+**Workflow Implementation**:  
+1. **Formation Design**:  
+   - Built intricate 3D swarm patterns through Skybrush's node-based animation system  
+   - Programmed synchronized maneuvers using keyframe-free procedural animation  
 
-Based on the Distributed GAN, we establish an experimental platform, and visualize the training and testing process. A schematic diagram of the DGAN experimental platform is shown.
-In our experiments, we deploy DGAN on three independent hosts for the distributed learning, and socket and multi process technology are used to realize asynchronous communication between the server and multiple clients. 
+2. **Drone Path Baking**:  
+   - Automated CSV trajectory exports for 30+ drones  
+   - Maintained flight safety through built-in collision detection algorithms  
+
+3. **Show Visualization**:  
+   - Rendered photorealistic previsualizations with Blender's Eevee engine  
+   - Generated real-time swarm previews with accurate LED color sequencing  
+
+**Visual Display**:  
+![](./1.gif)
+
+**Technical Showcase**:  
+- Timestamped CSV outputs for position (XYZ)   
+- Automated path smoothing for fluid drone movements  
+- Batch processing of 2000+ trajectory waypoints  
 
 ## Experiments
 
