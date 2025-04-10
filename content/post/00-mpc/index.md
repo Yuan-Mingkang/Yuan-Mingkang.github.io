@@ -15,9 +15,7 @@ Based on the open-source gym-pybullet-drones simulation environment, I developed
 
 ## MPC
 
-<!-- $$ L(x, u, X_r, U_r, Q, R) = \sum_{k=0}^{N-1} \left( \|x_k - X_r\|_Q^2 + \|u_k - U_r\|_R^2 \right) $$ -->
-
-![](./step.png)
+![](./1.gif)
 
 
 After finishing the training of the Distributed GAN, we collected the synthetic images from the Distributed GAN as the training set for different tasks. we use the trained Generator as a data provider to train DeepLab v3+ model for a semantic segmentation task on remote sensing images.
