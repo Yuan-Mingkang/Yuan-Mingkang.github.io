@@ -23,24 +23,24 @@ This project showcases professional drone light show creation using Blender Skyb
 
 **Workflow Implementation**:  
 1. **Formation Design**:  
-   - Built intricate 3D swarm patterns through Skybrush's node-based animation system  
-   - Programmed synchronized maneuvers using keyframe-free procedural animation  
+   Built intricate 3D swarm patterns through Skybrush's node-based animation system  
+   Programmed synchronized maneuvers using keyframe-free procedural animation  
 
 2. **Drone Path Baking**:  
-   - Automated CSV trajectory exports for 30+ drones  
-   - Maintained flight safety through built-in collision detection algorithms  
+   Automated CSV trajectory exports for 30+ drones  
+   Maintained flight safety through built-in collision detection algorithms  
 
 3. **Show Visualization**:  
-   - Rendered photorealistic previsualizations with Blender's Eevee engine  
-   - Generated real-time swarm previews with accurate LED color sequencing  
+   Rendered photorealistic previsualizations with Blender's Eevee engine  
+   Generated real-time swarm previews with accurate LED color sequencing  
 
 **Visual Display**:  
 ![](./1.gif)
 
 **Technical Showcase**:  
-- Timestamped CSV outputs for position (XYZ)   
-- Automated path smoothing for fluid drone movements  
-- Batch processing of 2000+ trajectory waypoints  
+Timestamped CSV outputs for position (XYZ)   
+Automated path smoothing for fluid drone movements  
+Batch processing of 2000+ trajectory waypoints  
 
 ## Experiments
 
