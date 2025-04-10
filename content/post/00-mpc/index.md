@@ -19,7 +19,7 @@ This project demonstrates the design and implementation of a high-performance Mo
 
 ### **Key Algorithmic Components**  
 1. **MPC Framework**  
-   - **Prediction Horizon**: Time-varying optimization over a receding horizon of \( T \) steps.  
+   - **Prediction Horizon**: Time-varying optimization over a receding horizon of $T$ steps.  
    - **State-Space Model**: 12-dimensional dynamics (position, velocity, Euler angles, angular rates).  
    - **Cost Function**: Quadratic penalty on state/input deviations and soft constraint violations.  
    - **Real-Time Adaptation**: Warm-starting initial guesses from prior solutions for faster convergence.  
@@ -38,7 +38,7 @@ This project demonstrates the design and implementation of a high-performance Mo
        - *Hard*: Actuator limits, collision avoidance.  
        - *Soft*: Slack variables with quadratic penalties for dynamic obstacle tolerance.  
      - **Cost Terms**:  
-       \[ J = \sum_{i=0}^{T-1} \|x_i - x_{ref}\|_Q^2 + \|u_i\|_R^2 + \|x_T - x_{goal}\|_P^2 \]  
+       $$J = \sum_{i=0}^{T-1} \|x_i - x_{ref}\|_Q^2 + \|u_i\|_R^2 + \|x_T - x_{goal}\|_P^2$$  
    - **Solver Configuration**:  
      - **IPOPT** for nonlinear optimization with sparse derivative computations.  
      - **CasADi** for automatic differentiation and symbolic Jacobian/Hessian generation.  
