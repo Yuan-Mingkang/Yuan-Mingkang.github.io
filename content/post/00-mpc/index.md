@@ -105,6 +105,5 @@ This project showcases professional drone light show creation using Blender Skyb
 - Batch processing of 2000+ trajectory waypoints  
 
 **Visual Display**:  
-![](./1-1.gif)
 
 ![](./3-1.gif)
