@@ -83,6 +83,7 @@ This project demonstrates the design and implementation of a high-performance Mo
      - CSV trajectory parsing → State reference generation → MPC-compatible format.  
 
 **Visual Display**:  
+![](./7-1.gif)
 
 ## Drone Swarm Choreography with Blender Skybrush
 
