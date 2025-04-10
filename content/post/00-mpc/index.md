@@ -106,4 +106,3 @@ This project showcases professional drone light show creation using Blender Skyb
 
 **Visual Display**:  
 
-![](./3-1.gif)
