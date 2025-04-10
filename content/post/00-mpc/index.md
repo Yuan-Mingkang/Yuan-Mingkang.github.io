@@ -161,4 +161,3 @@ TARGET_POS.append(dense_waypoints)  # Feed to MPC reference generator
 - **Temporal Synchronization**: \( \Delta t = 1/\text{control\_freq\_hz} \) matches MPC discretization
 
 **Visual Display**: 
-![](./3-2.gif) 
