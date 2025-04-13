@@ -1,148 +1,110 @@
 ---
-title: MPC-based multi-UAV trajectory tracking
-summary: I use MPC-based control algorithms and the simulation environment of gym-pybullet-drones to implement trajectory tracking for multi-UAV simulations!
-date: 2024-12-24
+title: PPO-based Single-Agent Drone Control in gym-PyBullet-drones Environment
+summary: I use PPO based control algorithm and gym-pybullet-drones simulation environment to realize trajectory tracking for UAV simulation and try to add perturbation simulation!
+date: 2025-2-16
 authors:
   - admin
 tags:
-  - MPC
+  - PPO
   - trajectory tracking
-  - multi-UAV
+  - UAV
 image:
 ---
+## 1.Project Overview
+This project implements **Proximal Policy Optimization (PPO)** to train a drone for stable flight in the `gym-pybullet-drones` simulation environment. The agent learns to maximize cumulative rewards through policy iteration, leveraging PPO's stability and efficiency for continuous control tasks. Key components include:
+- **Actor-Critic Architecture**: Separate networks for policy (Actor) and value estimation (Critic).
+- **Clipped Surrogate Objective**: Ensures stable policy updates by limiting divergence.
+- **Generalized Advantage Estimation (GAE)**: Balances bias-variance trade-off in advantage calculation.
+- **Experience Buffer**: Efficiently stores and processes trajectory data for mini-batch updates.
 
-Based on the open-source gym-pybullet-drones simulation environment, I developed a UAV simulation scenario that utilizes an MPC controller for trajectory tracking, supporting constraint definition and disturbances. I used the cf2 UAV model provided by gym-pybullet-drones, and I created UAV formation trajectories in Blender using the Skybrush plugin to facilitate algorithm verification. Ultimately, this resulted in a simulation effect of multiple UAVs tracking trajectories. 
-![](./7-1.gif)
+## 2.Algorithm Implementation Highlights
 
-**Proximal Policy Optimization (PPO) for Autonomous Drone Flight**  
-*Advanced Actor-Critic Framework & Stabilized Policy Gradient Implementation*  
+### 2.1 Core Components
+- **Dual Optimizers**:  
+  Actor and Critic networks use separate Adam optimizers with distinct learning rates to decouple updates:
+  ```python
+  self.actor_opt = Adam(actor.parameters(), lr=3e-4)
+  self.critic_opt = Adam(critic.parameters(), lr=1e-3)
+  ```
+- **Policy Loss with Clipping**:  
+  Limits policy updates to prevent drastic changes:
+  ```math
+  L^{CLIP} = \mathbb{E}_t\left[\min\left(r_t(\theta)A_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon)A_t\right)\right]
+  ```
+- **Entropy Regularization**:  
+  Encourages exploration by penalizing low-entropy policies.
 
-This project implements a high-performance PPO algorithm for training a solo drone to master complex flight maneuvers in dynamic environments. The system demonstrates deep integration of modern RL techniques with aerodynamic constraints, achieving precise control through adaptive policy updates.  
+### 2.2 Critical Design Choices
+- **Parameter Isolation**: Ensures gradients from Actor and Critic do not interfere.
+- **KL Early Stopping**: Halts policy updates if KL divergence exceeds `1.5 * target_kl`.
+- **Normalization**:  
+  - **Observation Normalization**: Standardizes states using running mean/std.  
+  - **Reward Normalization**: Scales rewards based on discounted return statistics.
 
----
-
-### **Technical Architecture**  
+### 2.3 Training Workflow
 ```mermaid
-graph TD
-    A[Environment Interaction] --> B[Rollout Phase]
-    B --> C[PPOBuffer]
-    C --> D[GAE Computation]
-    D --> E[Policy Optimization]
-    E --> F[KL Early Stopping]
-    F -->|Continue| G[Actor-Critic Updates]
-    F -->|Stop| H[Preserve Policy Stability]
-    G --> I[Parameter Synchronization]
-    I --> A
-    subgraph Core Loop
-        B --> C --> D --> E --> F
-    end
+flowchart TD
+    A[Initialize Agent & Environment] --> B[Collect Trajectories]
+    B --> C[Compute Returns & Advantages (GAE)]
+    C --> D[Update Policy & Value Networks]
+    D -->|Repeat| B
+    D --> E[Evaluate Policy]
+    E --> F{Reach Max Steps?}
+    F -->|Yes| G[Save Model]
+    F -->|No| B
 ```
 
----
 
-### **Key Algorithmic Components**  
-**1. Policy Network (Actor)**  
-```python
-class MLPActor(nn.Module):
-    def forward(self, obs):
-        mu = self.mlp(obs)  # Continuous control: 6DOF thrust vectors
-        log_std = self.logstd.expand_as(mu)
-        return Normal(mu, log_std.exp()), logp
+## Disturbance Injection Framework for Quadcopter Control in Gym-PyBullet-Drones Environment  
+
+### 1. Project Overview
+This project implements a modular disturbance injection framework within the **gym-pybullet-drones** simulation environment to evaluate and enhance the robustness of quadcopter control algorithms. The framework supports dynamic perturbation of system inputs (e.g., motor RPMs) and states (e.g., position, velocity), enabling rigorous testing of control policies under realistic disturbances such as wind gusts, sensor noise, and electromagnetic interference.  
+
+Key contributions include:    
+- **Composable disturbance sequences** (e.g., multi-step pulses, decaying oscillations).  
+- **Reproducible experiments** via deterministic random seed management.  
+
+### 2. Technical Implementation  
+
+The codebase employs a **Composite Pattern**  to unify individual disturbances into complex sequences:  
+
+```python  
+class Disturbance:  
+    def apply(self, target, env):  # Base class for all disturbances  
+        return target  
+
+class DisturbanceList(Disturbance):  # Composite class  
+    def apply(self, target, env):  
+        for disturb in self.disturbances:  # Sequentially apply perturbations  
+            target = disturb.apply(target, env)  
+        return target  
 ```
-- **Architecture**: 3-layer MLP (64→64→6) with Tanh activation  
-- **Output**: Gaussian distribution for smooth thrust control  
-- **Entropy Bonus**: \( \mathcal{H} = 0.5\log(2\pi e\sigma^2) \) maintained at 0.8-1.2  
+  
+- **Flexibility**: Combine impulse, noise, and periodic disturbances.  
+- **Reusability**: Disturbances can be masked to specific state/input dimensions (e.g., apply wind only to x-axis) using `mask` parameters 
 
-**2. Value Network (Critic)**  
-```python
-class MLPCritic(nn.Module):
-    def forward(self, obs):
-        return self.mlp(obs)  # Scalar value estimation
+#### Impulse Disturbance Design
+The `ImpulseDisturbance` class models short-duration perturbations with configurable waveforms:  
+```python  
+class ImpulseDisturbance(Disturbance):  
+    def __init__(self, magnitude=1, duration=1, decay_rate=1):  
+        # Waveform examples: square (decay_rate=1), triangle (decay_rate<1)  
+        self.magnitude = magnitude  
+        self.decay = decay_rate ** np.arange(duration)  
 ```
-- **Architecture**: 3-layer MLP (64→64→1)  
-- **Loss Function**: Clipped value loss with \( \epsilon=0.3 \)  
+  
+- **Waveform types**: Square, triangular, and exponential decay pulses 
+![](./wave.png)
+- **Mathematical representation**:  
+  - **Square pulse**: $ \delta(t) = A \cdot \mathbb{I}_{[t_0, t_0 + \Delta t]}(t) $  
+  - **Triangular pulse**: $ \delta(t) = A \cdot (1 - \frac{t}{\Delta t}) $  
 
-**3. Stabilized Training Mechanism**  
-| Component | Implementation | Purpose |  
-|---|---|---|  
-| **Clipped Surrogate** | \( L^{CLIP} = \min(r_tA_t, \text{clip}(r_t,1\pm0.2)A_t) \) | Prevent policy collapse |  
-| **GAE** | \( \lambda=0.95, \gamma=0.99 \) | Low-variance advantage estimates |  
-| **KL Divergence** | Early stop if \( KL > 1.5\times0.01 \) | Trust region enforcement |  
-| **Dual Optimizers** | Adam(lr:3e-4 vs 1e-3) | Decoupled actor-critic learning |  
-
----
-
-### **Core Innovations**  
-**1. Dynamic Observation Normalization**  
-```python
-class DroneObsNormalizer(MeanStdNormalizer):
-    def update(self, obs):
-        # Special handling for quaternion orientations
-        obs[..., 3:7] = self._normalize_quat(obs[..., 3:7])  
-        super().update(obs)
-```  
-- **Quaternion-Safe**: Geometric mean for rotation components  
-- **Velocity Clipping**: \( \|v\| \leq 12m/s \) enforced through \( C=5 \)  
-
-**2. Aerodynamic Reward Shaping**  
-\[ r_t = \underbrace{0.7r_{\text{track}}}_{\text{Position}} + \underbrace{0.2r_{\text{energy}}}_{\text{Efficiency}} - \underbrace{0.1r_{\text{vibration}}}_{\text{Stability}} \]  
-- **Realism**: Propeller dynamics modeled via \( \tau = K_t\omega^2 \)  
-
-**3. Emergency Recovery**  
-```python
-if collision_risk > 0.7:
-    self.agent.act(obs)  # Override to safety policy
-    self.buffer.purge_last(10)  # Remove unsafe trajectories
+#### Deterministic Randomness
+The `seed()` method ensures reproducibility by synchronizing disturbance randomization with the simulation:  
+```python  
+def seed(self, env):  
+    self.np_random = env.np_random   
 ```
+This is critical for RL policy evaluation under stochastic disturbances.  
+  
 
----
-
-### **Training Protocol**  
-**Phase 1 - Exploration**  
-| Parameter | Value | Purpose |  
-|---|---|---|  
-| Entropy Coef | 0.2 | Boost initial exploration |  
-| Clip Param | 0.3 | Allow aggressive updates |  
-| Batch Size | 4096 | Diverse experience |  
-
-**Phase 2 - Refinement**  
-| Parameter | Value | Purpose |  
-|---|---|---|  
-| Entropy Coef | 0.01 | Exploit learned policy |  
-| Clip Param | 0.1 | Fine-tune actions |  
-| LR Decay | Cosine | Stabilize final convergence |  
-
----
-
-### **Performance Metrics**  
-- **Training Stability**: 98% success rate in 100K steps  
-- **Control Precision**: Positional error <0.35m under 15m/s wind  
-- **Computational Efficiency**: 280 FPS on NVIDIA Jetson TX2  
-
----
-
-**Tools & Technologies**  
-`PyTorch` `OpenAI Gym` `MuJoCo` `TensorBoard`  
-
-*Full implementation demonstrates mastery of PPO's theoretical foundations and practical challenges in drone control. Code samples and flight videos available upon request.*  
-
----
-
-### **Complete Training Flowchart**  
-```mermaid
-graph TD
-    A[Env Reset] --> B[Rollout 2048 Steps]
-    B --> C[Compute GAE Returns]
-    C --> D[Batch Sampling]
-    D --> E{KL < Threshold?}
-    E -->|Yes| F[Actor Update]
-    E -->|No| G[Early Stop]
-    F --> H[Critic Update]
-    H --> I[Log Metrics]
-    I --> J{Reach 1M Steps?}
-    J -->|No| A
-    J -->|Yes| K[Save Policy]
-```  
-*Arrows indicate gradient flow directions between components*  
-
-This architecture showcases sophisticated handling of PPO's dual-network dynamics and real-world physics integration - ideal for demonstrating cutting-edge RL expertise in autonomous systems.
