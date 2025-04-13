@@ -1,7 +1,7 @@
 ---
 title: PPO-based Single-Agent Drone Control in gym-PyBullet-drones Environment
 summary: I use PPO based control algorithm and gym-pybullet-drones simulation environment to realize trajectory tracking for UAV simulation and try to add perturbation simulation!
-date: 2025-2-16
+date: 2025-02-16
 authors:
   - admin
 tags:
@@ -40,20 +40,6 @@ This project implements **Proximal Policy Optimization (PPO)** to train a drone 
 - **Normalization**:  
   - **Observation Normalization**: Standardizes states using running mean/std.  
   - **Reward Normalization**: Scales rewards based on discounted return statistics.
-
-### 2.3 Training Workflow
-```mermaid
-flowchart TD
-    A[Initialize Agent & Environment] --> B[Collect Trajectories]
-    B --> C[Compute Returns & Advantages (GAE)]
-    C --> D[Update Policy & Value Networks]
-    D -->|Repeat| B
-    D --> E[Evaluate Policy]
-    E --> F{Reach Max Steps?}
-    F -->|Yes| G[Save Model]
-    F -->|No| B
-```
-
 
 ## Disturbance Injection Framework for Quadcopter Control in Gym-PyBullet-Drones Environment  
 
