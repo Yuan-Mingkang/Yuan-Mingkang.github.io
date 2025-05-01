@@ -17,7 +17,7 @@ Based on the open-source gym-pybullet-drones simulation environment, I developed
 
 This project demonstrates the design and implementation of a high-performance Model Predictive Control (MPC) system for precise trajectory tracking in multi-drone swarms. The algorithm leverages symbolic computation, nonlinear optimization, and dynamic constraints to achieve robust path following in complex 3D environments.  
 **Visual Display**:  
-![](./1-2.gif)
+![](./7-1.gif)
 ### **Key Algorithmic Components**  
 1. **MPC Framework**  
    - **Prediction Horizon**: Time-varying optimization over a receding horizon of $T$ steps.  
@@ -83,11 +83,11 @@ This project demonstrates the design and implementation of a high-performance Mo
    - **Data Pipeline**:  
      - CSV trajectory parsing → State reference generation → MPC-compatible format.  
 
-**Visual Display**:  
-![](./7-1.gif)
+
 
 ## Drone Swarm Choreography with Blender Skybrush
-
+**Visual Display**:  
+![](./1-2.gif)
 This project showcases professional drone light show creation using Blender Skybrush's specialized toolkit:  
 
 **Workflow Implementation**:  
