@@ -16,10 +16,82 @@ This project implements **Proximal Policy Optimization (PPO)** to train a drone 
 - **Clipped Surrogate Objective**: Ensures stable policy updates by limiting divergence.
 - **Generalized Advantage Estimation (GAE)**: Balances bias-variance trade-off in advantage calculation.
 - **Experience Buffer**: Efficiently stores and processes trajectory data for mini-batch updates.
+## 2.PPO Algorithm Flow for UAV Simulation Control
 
-## 2.Algorithm Implementation Highlights
+### **Module 1: Data Collection**  
+1. **Step 1:** Assign the current policy network parameters \(\theta\) as the old policy network parameters \(\theta_{old}\).  
+2. **Step 2:** Input the initial state \(s_0\) into the old policy network. Since both states \(s\) and actions \(a\) are continuous, the policy network adopts a **stochastic Gaussian policy framework**. The network outputs the mean \(\mu_{old}\) and standard deviation \(\sigma_{old}\) of the Gaussian distribution for action \(a\), generating the policy function \(\pi_{old}(a|s, \theta_{old})\). An action \(a_0 \sim \pi_{old}(\cdot | s_0, \theta_{old})\) is sampled and executed in the environment. The environment returns a reward \(r_1\) and transitions to the next state \(s_1\), forming a transition tuple \((s_0, a_0, r_1, s_1)\). This loop repeats, generating multiple tuples \((s_0, a_0, r_1, s_1), (s_1, a_1, r_2, s_2), \ldots\), which are stored in an **experience replay buffer** for training.
 
-### 2.1 Core Components
+---
+
+### **Module 2: Compute State Value Function and Advantage Function**  
+1. **Step 1:** Sequentially retrieve transition tuples from the replay buffer. Input each state \(s_t\) into the **value network** (Critic) to compute its estimated value:  
+   \[
+   V(s_t; w) \quad \text{(e.g., } q_0 = V(s_0; w), \, q_1 = V(s_1; w), \ldots\text{)}
+   \]  
+2. **Step 2:** Compute the **TD target** for each state \(s_t\):  
+   \[
+   y_t = r_{t+1} + \gamma V(s_{t+1}; w)
+   \]  
+3. **Step 3:** Calculate the **TD error**:  
+   \[
+   \delta_t = V(s_t; w) - y_t
+   \]  
+4. **Step 4:** Compute the **advantage function \(A_t\)** using **Generalized Advantage Estimation (GAE)**. GAE reduces variance in policy gradients by combining multiple \(k\)-step advantage estimates:  
+   \[
+   A_t^{(k)} = \sum_{i=0}^{k-1} (\gamma \lambda)^i \delta_{t+i}
+   \]  
+   where \(\lambda \in [0, 1]\) is a hyperparameter for balancing bias and variance. The final GAE is a weighted average:  
+   \[
+   A_t^{GAE(\gamma, \lambda)} = \sum_{n=0}^\infty (\gamma \lambda)^n \delta_{t+n}
+   \]  
+
+---
+
+### **Module 3: Update the Value Network (Critic)**  
+1. **Step 1:** Define the **Mean Squared Error (MSE)** loss for the value network:  
+   \[
+   L(w) = \left[ V(s_t; w) - \left( r_{t+1} + \gamma V(s_{t+1}; w) \right) \right]^2
+   \]  
+2. **Step 2:** Compute the gradient of the loss:  
+   \[
+   \nabla_w L(w) = 2 \delta_t \nabla_w V(s_t; w)
+   \]  
+3. **Step 3:** Update the value network parameters using gradient descent (or mini-batch optimization):  
+   \[
+   w \leftarrow w - 2\alpha \delta_t \nabla_w V(s_t; w)
+   \]  
+
+---
+
+### **Module 4: Update the Policy Network (Actor)**  
+1. **Step 1:** For each transition \((s_t, a_t, r_{t+1}, s_{t+1})\), compute the log-probability of action \(a_t\) under the **old policy** \(\pi_{old}\):  
+   \[
+   \log \pi_{old}(a_t | s_t, \theta_{old})
+   \]  
+2. **Step 2:** Train the current policy network:  
+   - **(a)** Input \(s_t\) into the **new policy network** to compute the updated Gaussian parameters \(\mu_{new}\) and \(\sigma_{new}\). Calculate the log-probability under the new policy:  
+     \[
+     \log \pi_{new}(a_t | s_t, \theta_{new})
+     \]  
+   - **(b)** Compute the **importance sampling ratio**:  
+     \[
+     r(\theta) = \exp\left[ \log \pi_{new}(a_t | s_t, \theta_{new}) - \log \pi_{old}(a_t | s_t, \theta_{old}) \right]
+     \]  
+   - **(c)** Calculate the **clipped policy gradient** using the advantage \(A_t^{GAE}\):  
+     \[
+     \nabla_{\theta_{new}} J^{CLIP}(\theta_{new}) = \mathbb{E} \left[ \min\left( r(\theta) A_t^{GAE}, \, \text{clip}(r(\theta), 1-\epsilon, 1+\epsilon) A_t^{GAE} \right) \right]
+     \]  
+     where \(\epsilon\) is a clipping hyperparameter (e.g., \(\epsilon = 0.2\)).  
+   - **(d)** Update the policy network:  
+     \[
+     \theta_{new} \leftarrow \theta_{old} + \beta \nabla_{\theta_{new}} J^{CLIP}(\theta_{new})
+     \]  
+3. **Step 3:** Set \(\theta_{old} \leftarrow \theta_{new}\) and repeat Modules 1–4 iteratively.  
+
+## 3.Algorithm Implementation Highlights
+
+### 3.1 Core Components
 - **Dual Optimizers**:  
   Actor and Critic networks use separate Adam optimizers with distinct learning rates to decouple updates:
   ```python
@@ -28,13 +100,13 @@ This project implements **Proximal Policy Optimization (PPO)** to train a drone 
   ```
 - **Policy Loss with Clipping**:  
   Limits policy updates to prevent drastic changes:
-  ```math
+  $$
   L^{CLIP} = \mathbb{E}_t\left[\min\left(r_t(\theta)A_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon)A_t\right)\right]
-  ```
+  $$
 - **Entropy Regularization**:  
   Encourages exploration by penalizing low-entropy policies.
 
-### 2.2 Critical Design Choices
+### 3.2 Critical Design Choices
 - **Parameter Isolation**: Ensures gradients from Actor and Critic do not interfere.
 - **KL Early Stopping**: Halts policy updates if KL divergence exceeds `1.5 * target_kl`.
 - **Normalization**:  
