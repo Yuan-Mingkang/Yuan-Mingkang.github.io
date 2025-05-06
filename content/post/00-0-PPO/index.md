@@ -88,7 +88,7 @@ This project implements **Proximal Policy Optimization (PPO)** to train a drone 
      \theta_{new} \leftarrow \theta_{old} + \beta \nabla_{\theta_{new}} J^{CLIP}(\theta_{new})
      \]  
 3. **Step 3:** Set \(\theta_{old} \leftarrow \theta_{new}\) and repeat Modules 1–4 iteratively.  
-
+![](./ppo.gif)
 ## 3.Algorithm Implementation Highlights
 
 ### 3.1 Core Components
