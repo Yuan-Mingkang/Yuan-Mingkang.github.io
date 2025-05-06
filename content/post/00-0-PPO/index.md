@@ -16,6 +16,7 @@ This project implements **Proximal Policy Optimization (PPO)** to train a drone 
 - **Clipped Surrogate Objective**: Ensures stable policy updates by limiting divergence.
 - **Generalized Advantage Estimation (GAE)**: Balances bias-variance trade-off in advantage calculation.
 - **Experience Buffer**: Efficiently stores and processes trajectory data for mini-batch updates.
+![](./ppo.gif)
 ## 2.PPO Algorithm Flow for UAV Simulation Control
 
 ### **Module 1: Data Collection**  
@@ -88,7 +89,7 @@ This project implements **Proximal Policy Optimization (PPO)** to train a drone 
      \theta_{new} \leftarrow \theta_{old} + \beta \nabla_{\theta_{new}} J^{CLIP}(\theta_{new})
      \]  
 3. **Step 3:** Set \(\theta_{old} \leftarrow \theta_{new}\) and repeat Modules 1–4 iteratively.  
-![](./ppo.gif)
+
 ## 3.Algorithm Implementation Highlights
 
 ### 3.1 Core Components
