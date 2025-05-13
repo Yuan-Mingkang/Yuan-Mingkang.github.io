@@ -59,7 +59,7 @@ education:
     date_start: 2020-09-01
     date_end: 2023-07-31
     summary: |
-      GPA: 3.58/4.0
+      GPA: 3.58/4.0 or 3.70/4.3
 
       Courses included:
       - Methods of Optimization, Matrix Analysis and Application
@@ -70,7 +70,7 @@ education:
     date_start: 2016-08-11
     date_end: 2020-07-10
     summary: |
-      GPA: 3.23/4.0
+      GPA: 3.75/4.3
       
       Courses included:
       - Advanced Mathematics, Linear Algebra
