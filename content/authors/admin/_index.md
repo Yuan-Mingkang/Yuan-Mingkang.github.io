@@ -70,7 +70,7 @@ education:
     date_start: 2016-08-11
     date_end: 2020-07-10
     summary: |
-      GPA: 3.23/4.0
+      GPA: 3.31/4.0
       
       Courses included:
       - Advanced Mathematics, Linear Algebra
