@@ -1,5 +1,5 @@
 ---
-title: Formation Drone
+title: Miniature WiFi-Controlled Drone with Dual-Loop PID Stabilization
 summary: Based on ESP32 Flight Controller & Custom Transmitter!
 date: 2023-11-12
 authors:
