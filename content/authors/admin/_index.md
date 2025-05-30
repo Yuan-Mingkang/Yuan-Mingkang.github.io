@@ -129,6 +129,16 @@ languages:
     percent: 75
 ---
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6S1SQP4ZW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G6S1SQP4ZW');
+</script>
+
 ## About Me
 
 I am currently a flight control engineer in a Chinese company. My research interests include Drones, Robotics, and Machine Learning. So far, I have worked on several related projects, designed and developed several robots and drones, and have a strong passion for this industry.

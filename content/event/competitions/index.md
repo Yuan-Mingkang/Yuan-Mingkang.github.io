@@ -11,6 +11,17 @@ image:
   focal_point: 'Center'
   preview_only: false
 ---
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6S1SQP4ZW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G6S1SQP4ZW');
+</script>
+
 This is the utility model patent I applied for my wall-climbing cleaning robot, with my instructor as the first inventor and me as the second inventor!
 
 ## Awards

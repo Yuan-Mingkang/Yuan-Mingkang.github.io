@@ -10,6 +10,17 @@ tags:
   - UAV
 image:
 ---
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6S1SQP4ZW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G6S1SQP4ZW');
+</script>
+
 ## 1.Project Overview
 This project implements **Proximal Policy Optimization (PPO)** to train a drone for stable flight in the `gym-pybullet-drones` simulation environment. The agent learns to maximize cumulative rewards through policy iteration, leveraging PPO's stability and efficiency for continuous control tasks. Key components include:
 - **Actor-Critic Architecture**: Separate networks for policy (Actor) and value estimation (Critic).

@@ -11,6 +11,16 @@ tags:
 image:
 ---
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6S1SQP4ZW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G6S1SQP4ZW');
+</script>
+
 Aiming at the problem that the instance segmentation accuracy of nematode images still needs to be improved, the instance segmentation model with the addition of a centroskeleton head network is proposed to strengthen the model. 
 In this project, I am mainly responsible for extracting the centroskeleton information of nematode images and designing the centroskeleton head network, and adding the centroskeleton head network based on the Mask RCNN network. I used Pytorch and Mmdetection framework to complete this project. The final result shows that the segmentation accuracy of nematode image instances is improved by about 1%.
 

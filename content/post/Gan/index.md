@@ -11,6 +11,16 @@ tags:
 image:
 ---
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6S1SQP4ZW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G6S1SQP4ZW');
+</script>
+
 The DGAN is composed of multiple distributed discriminators and a central generator. The central generator, denoted as G, takes the labeled images as input and generates synthetic images to fool the discriminators. The local discriminators, denote as D1 to Dn, distinguish between real and fake images. In the framework, only the synthetic images, losses, and labeled images are exchanged between the central generator and local discriminators. In this way, the original images of local discriminators and model information are not shared, and therefore the privacy of the original images is protected. 
 
 ## Steps

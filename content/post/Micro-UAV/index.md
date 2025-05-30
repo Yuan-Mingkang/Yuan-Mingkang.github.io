@@ -9,6 +9,17 @@ tags:
   - 3D Printing
 image:
 ---
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6S1SQP4ZW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G6S1SQP4ZW');
+</script>
+
 #### **Project Overview**  
 This project implements a palm-sized autonomous drone using an **ESP32 microcontroller** for real-time flight stabilization. Key innovations include:  
 - **Cascade PID Control**: Dual-loop angular rate & attitude stabilization.  

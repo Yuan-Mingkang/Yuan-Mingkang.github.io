@@ -11,6 +11,16 @@ tags:
 image:
 ---
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6S1SQP4ZW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G6S1SQP4ZW');
+</script>
+
 I used the principle of negative vacuum pressure to create four legs with suction cups and used microcontroller control to allow the robot to attach itself to the wall and move!
 
 ## Presentations

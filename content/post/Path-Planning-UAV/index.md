@@ -11,6 +11,16 @@ tags:
 image:
 ---
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6S1SQP4ZW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G6S1SQP4ZW');
+</script>
+
 ### **Project Overview**  
 This project integrates **Fast LIO LiDAR SLAM** and **EGO-Planner path planning** algorithms to develop a real-time obstacle avoidance system for UAVs using an NVIDIA Jetson Orin NX 16G embedded platform. The UAV employs a Livox LiDAR for environmental perception and transmits navigation commands to the PX4 flight controller via MAVROS. The system achieves dynamic obstacle avoidance in complex environments while optimizing resource usage on embedded hardware.
 
